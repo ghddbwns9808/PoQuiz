@@ -22,6 +22,12 @@
 #### 디자인
 - Figma
 
+## 요구사항 명세 및 시스템 구조도
+### 시스템 구조도
+![구조도](https://github.com/ghddbwns9808/PoQuiz/assets/65646370/33e3ab0c-dbaa-46cb-a914-cd687b1ceb7e)
+
+### [요구사항 명세서](https://docs.google.com/document/d/1E5Zbgs2E5ATZnice7rm7Z5IB0qdDJ9FbxOZTqaigSXc/edit)
+
 ## 🛠 기능 소개
 #### 1.로그인
 ##### 1) 로그인 성공
