@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="m3_background">#FEF7FF</color>
+    
+    <color name="ditto_purple_dark">#9C5AB4</color>
+    <color name="ditto_purple">#C57CE6</color>
+
+    <color name="ditto_text">#543F5B</color>
+
+    <color name="btm_nav_unselected">#49454F</color>
+    <color name="et_error">#B3261E</color>
+
+    <color name="rank_bg">#1D1D1D</color>
+</resources>

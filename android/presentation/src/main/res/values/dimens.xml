@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="btn_small_width">140dp</dimen>
+    <dimen name="btn_small_height">90dp</dimen>
+    <dimen name="btn_small_text">8sp</dimen>
+
+    <dimen name="btn_large_width">220dp</dimen>
+    <dimen name="btn_large_height">100dp</dimen>
+    <dimen name="btn_large_text">8sp</dimen>
+</resources>

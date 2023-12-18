@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:backgroundTint="@color/rank_bg">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:backgroundTint="@color/rank_bg">
+
+        <TextView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/tvRank"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="100dp"
+            android:text="1등"
+            android:textAppearance="@style/Text"
+            android:background="@color/rank_bg"
+            android:textSize="30sp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textAlignment="center" />
+
+        <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/tvNickname"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="4"
+            android:text="수진짱"
+            android:textAppearance="@style/Text"
+            android:textSize="30sp"
+            android:background="@color/rank_bg"
+            android:gravity="center"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:textColor="@color/white"
+            android:textAlignment="center" />
+
+        <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/tvScore"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:text="1점"
+            android:background="@color/rank_bg"
+            android:textAppearance="@style/Text"
+            android:textSize="30sp"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:textAlignment="center" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</FrameLayout>

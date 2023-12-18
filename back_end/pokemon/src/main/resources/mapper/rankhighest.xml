@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.pokemon.mapper.RankHighestMapper">
+    <insert id="scoreInsert" parameterType="Rank">
+        INSERT INTO highestrank
+        (user_id,
+         user_score,
+         user_nickname)
+        VALUES (#{userId}, #{userScore}, #{userNickname})
+    </insert>
+
+    <select id="scoreSelect" parameterType="string" resultType="Rank">
+        SELECT * FROM highestrank
+        WHERE user_id = #{userId}
+    </select>
+
+    <update id="scoreUpdate" parameterType="Rank">
+        UPDATE highestrank
+        SET
+            user_score = #{userScore}
+        WHERE user_id = #{userId}
+    </update>
+
+    <select id="selectAllScore" resultType="Rank">
+        SELECT * FROM highestrank ORDER BY 2 DESC LIMIT 10
+    </select>
+
+    <delete id="scoreDelete" parameterType="string">
+        DELETE FROM highestrank WHERE user_id = #{userId}
+    </delete>
+
+    <update id="updateUserNickname" parameterType="map">
+        UPDATE highestrank SET user_nickname = #{userNickname} WHERE user_id = #{userId}
+    </update>
+
+
+</mapper>

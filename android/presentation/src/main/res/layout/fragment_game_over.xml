@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout4"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".game.GameOverFragment">
+
+    <ImageView
+        android:id="@+id/ivDitto"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="148dp"
+        android:src="@drawable/ditto_removed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linearLayoutCompat4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivDitto">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/game_over"
+            android:textAppearance="@style/Text"
+            android:textSize="40sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="@string/game_over_score"
+            android:textAppearance="@style/Text"
+            android:textSize="35sp" />
+
+        <TextView
+            android:id="@+id/tvCorrect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="13점"
+            android:textAppearance="@style/Text"
+            android:textSize="35sp" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <com.poquiz.presentation.customview.PoQuizButton
+        android:id="@+id/btnToMain"
+        android:layout_width="@dimen/btn_large_width"
+        android:layout_height="@dimen/btn_large_height"
+        app:btnText="메인으로"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat4"
+        app:textSize="@dimen/btn_large_text"
+        android:layout_marginTop="20dp"/>
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">포퀴즈</string>
+
+    <string name="auto_logint">자동로그인</string>
+
+    <string name="btm_nav_game">게임</string>
+    <string name="btm_nav_ranking">랭킹</string>
+    <string name="btm_nav_profile">프로필</string>
+
+    <string name="toast_login_success">로그인이 되었단다!</string>
+    <string name="toast_join_success">회원가입이 되었단다!</string>
+
+    <string name="doctor_select_difficulty">난이도를\n 선택해보렴!</string>
+    <string name="doctor_select_correct">정답이구나!</string>
+
+    <string name="difficulty_easy">하수</string>
+    <string name="difficulty_mid">중수</string>
+    <string name="difficulty_hard">고수</string>
+    <string name="difficulty_very_hard">개고수</string>
+
+    <string name="join_id_available">사용 가능한 아이디입니다</string>
+    <string name="join_id_non_available">중복된 아이디입니다</string>
+    <string name="join_id_require_dup_check">아이디 중복 검사를 해주세요</string>
+    <string name="join_nickname_available">사용 가능한 닉네임입니다</string>
+    <string name="join_nickname_non_available">중복된 닉네임입니다</string>
+    <string name="join_nickname_require_dup_check">닉네임 중복 검사를 해주세요</string>
+    <string name="join_pw_rule">8자 이상, 영문 숫자만 가능</string>
+
+    <string name="btn_login">로그인</string>
+    <string name="btn_join"><u>회원가입</u></string>
+    <string name="btn_start_game">게임 시작</string>
+    <string name="btn_enter">입력</string>
+    <string name="btn_to_main">메인 화면</string>
+    <string name="btn_change_nickname">닉네임 변경</string>
+    <string name="btn_logout">로그아웃</string>
+
+    <string name="game_correct_cnt">맞은 문제</string>
+    <string name="game_remain_time">남은시간</string>
+    <string name="game_over">GAME OVER</string>
+    <string name="game_over_score">최종 점수</string>
+
+    <string name="ranking_easy">하수 랭킹</string>
+    <string name="ranking_mid">중수 랭킹</string>
+    <string name="ranking_hard">고수 랭킹</string>
+    <string name="ranking_very_hard">개고수 랭킹</string>
+
+    <string name="profile_poke_master">포켓몬 마스터가 될거야!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

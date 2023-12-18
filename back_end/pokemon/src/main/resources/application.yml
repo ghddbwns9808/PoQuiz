@@ -1,0 +1,29 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:mysql://my-rds-database.crcie0cgjdrg.ap-northeast-2.rds.amazonaws.com:3306/pokemon_quiz?serverTimezone=Asia/Seoul
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: ssafyproject
+
+mybatis:
+  mapper-locations: mapper/**/*.xml
+  type-aliases-package: com.ssafy.pokemon.dto
+  configuration:
+    map-underscore-to-camel-case: true
+
+logging:
+  level:
+    com.ssafy.pokemon : info
+
+springdoc:
+  api-docs:
+    tags-group-order:
+      - "User"
+      - "Pokemon"
+      - "RankLow"
+      - "RankNormal"
+      - "RankHigh"
+

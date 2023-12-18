@@ -1,0 +1,63 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.PoQuiz" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+         <item name="colorPrimary">@color/ditto_purple_dark</item>
+        <item name="android:statusBarColor">@color/m3_background</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="Theme.PoQuiz" parent="Base.Theme.PoQuiz" />
+
+    <style name="Text" parent="Theme.PoQuiz">
+        <item name="fontFamily">@font/dunggeunmo_pro</item>
+    </style>
+
+    <style name="Text.Logo" parent="Text">
+        <item name="android:letterSpacing">0.28</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/ditto_text</item>
+    </style>
+
+    <style name="Text.TextInput" parent="Text">
+        <item name="android:letterSpacing">0.1</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:textColor">@color/ditto_text</item>
+    </style>
+
+    <style name="Text.TextInput.Helper" parent="Text">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/btm_nav_unselected</item>
+    </style>
+
+    <style name="Text.TextInput.Hint" parent="Text">
+        <item name="android:letterSpacing">0.1</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/ditto_purple_dark</item>
+    </style>
+    
+    <style name="PoQuiz.TextInput" parent="Theme.PoQuiz">
+        <item name="boxStrokeWidth">2dp</item>
+        <item name="boxStrokeColor">@color/text_input_stroke_color</item>
+        <item name="boxStrokeErrorColor">@color/et_error</item>
+        <item name="android:textColorHint">@color/ditto_purple_dark</item>
+        <item name="hintTextColor">@color/ditto_purple_dark</item>
+        <item name="hintTextAppearance">@style/Text.TextInput.Hint</item>
+        <item name="android:textAppearance">@style/Text.TextInput</item>
+        <item name="helperTextEnabled">true</item>
+        <item name="helperTextTextAppearance">@style/Text.TextInput.Helper</item>
+        <item name="errorTextAppearance">@style/Text.TextInput.Helper</item>
+        <item name="errorTextColor">@color/et_error</item>
+        <item name="counterMaxLength">10</item>
+        <item name="counterTextAppearance">@style/Text.TextInput.Helper</item>
+        <item name="counterTextColor">@color/btm_nav_unselected</item>
+        <item name="counterOverflowTextAppearance">@style/Text.TextInput.Helper</item>
+        <item name="counterOverflowTextColor">@color/et_error</item>
+        <item name="endIconTint">@color/btm_nav_unselected</item>
+        <item name="errorEnabled">false</item>
+        <item name="android:layout_marginBottom">8dp</item>
+    </style>
+
+</resources>
