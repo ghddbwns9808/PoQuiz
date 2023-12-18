@@ -9,7 +9,7 @@
 | 오하빈 | 홍유준 |
 | --- | --- |
 | ![habin](https://github.com/ghddbwns9808/PoQuiz/assets/65646370/4c221020-5d37-4e61-86d6-d36136b21db3) | ![yoojun](https://github.com/ghddbwns9808/PoQuiz/assets/65646370/939c9899-2d1c-469c-9ef6-0a083e2f74cb) |
-| BackEnd | Android |
+| 서버 구축, DB 설계 및 관리, 백엔드 개발  | 기획, 디자인, 안드로이드 개발 |
 
 ## 🛠 개발 환경
 
@@ -26,7 +26,8 @@
 ### 시스템 구조도
 ![구조도](https://github.com/ghddbwns9808/PoQuiz/assets/65646370/33e3ab0c-dbaa-46cb-a914-cd687b1ceb7e)
 
-### [요구사항 명세서](https://docs.google.com/document/d/1E5Zbgs2E5ATZnice7rm7Z5IB0qdDJ9FbxOZTqaigSXc/edit)
+### [요구사항 명세서](https://docs.google.com/document/d/1E5Zbgs2E5ATZnice7rm7Z5IB0qdDJ9FbxOZTqaigSXc/edit)  
+#
 
 ## 🖥️ 기능 소개
 #### 1.로그인
