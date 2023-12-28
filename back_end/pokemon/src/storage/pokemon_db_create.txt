@@ -1,0 +1,91 @@
+drop database pokemon_quiz;
+
+create database pokemon_quiz;
+
+Use Pokemon_quiz;
+
+CREATE TABLE `User` (
+	`user_id`	VARCHAR(30)	NOT NULL,
+	`user_password`	VARCHAR(50)	NOT NULL,
+	`user_nickname`	VARCHAR(20)	NOT NULL
+);
+
+CREATE TABLE `LowRank` (
+	`user_id`	VARCHAR(30)	NOT NULL,
+	`user_score`	INTEGER	NOT NULL
+);
+
+CREATE TABLE `NormalRank` (
+	`user_id`	VARCHAR(30)	NOT NULL,
+	`user_score`	INTEGER	NOT NULL
+);
+
+CREATE TABLE `HighRank` (
+	`user_id`	VARCHAR(30)	NOT NULL,
+	`user_score`	INTEGER	NOT NULL
+);
+
+CREATE TABLE `HighestRank` (
+	`user_id`	VARCHAR(30)	NOT NULL,
+	`user_score`	INTEGER	NOT NULL
+);
+
+CREATE TABLE `Pokemon` (
+	`pokemon_number`	INTEGER	NOT NULL,
+	`pokemon_type`	VARCHAR(20)	NOT NULL,
+	`pokemon_name`	VARCHAR(30)	NOT NULL
+);
+
+ALTER TABLE `User` ADD CONSTRAINT `PK_USER` PRIMARY KEY (
+	`user_id`
+);
+
+ALTER TABLE `LowRank` ADD CONSTRAINT `PK_LOWRANK` PRIMARY KEY (
+	`user_id`
+);
+
+ALTER TABLE `NormalRank` ADD CONSTRAINT `PK_NORMALRANK` PRIMARY KEY (
+	`user_id`
+);
+
+ALTER TABLE `HighRank` ADD CONSTRAINT `PK_HIGHRANK` PRIMARY KEY (
+	`user_id`
+);
+
+ALTER TABLE `HighestRank` ADD CONSTRAINT `PK_HIGHESTRANK` PRIMARY KEY (
+	`user_id`
+);
+
+ALTER TABLE `Pokemon` ADD CONSTRAINT `PK_POKEMON` PRIMARY KEY (
+	`pokemon_number`
+);
+
+ALTER TABLE `LowRank` ADD CONSTRAINT `FK_User_TO_LowRank_1` FOREIGN KEY (
+	`user_id`
+)
+REFERENCES `User` (
+	`user_id`
+);
+
+ALTER TABLE `NormalRank` ADD CONSTRAINT `FK_User_TO_NormalRank_1` FOREIGN KEY (
+	`user_id`
+)
+REFERENCES `User` (
+	`user_id`
+);
+
+ALTER TABLE `HighRank` ADD CONSTRAINT `FK_User_TO_HighRank_1` FOREIGN KEY (
+	`user_id`
+)
+REFERENCES `User` (
+	`user_id`
+);
+
+ALTER TABLE `HighestRank` ADD CONSTRAINT `FK_User_TO_HighestRank_1` FOREIGN KEY (
+	`user_id`
+)
+REFERENCES `User` (
+	`user_id`
+);
+
+
