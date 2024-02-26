@@ -3,7 +3,6 @@ package com.poquiz.presentation.profile
 import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.Context
-import android.content.Intent
 import android.content.SharedPreferences
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
@@ -17,7 +16,6 @@ import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.viewModels
 import com.google.android.material.textfield.TextInputLayout
-import com.poquiz.domain.model.User
 import com.poquiz.presentation.MainActivity
 import com.poquiz.presentation.R
 import com.poquiz.presentation.databinding.FragmentProfileBinding
@@ -51,15 +49,8 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(
         mainActivity = _activity as MainActivity
         mainActivity.onBackPressedDispatcher.addCallback(viewLifecycleOwner, onBackPressedCallback)
 
-
         pref = requireContext().getSharedPreferences("user_info", Context.MODE_PRIVATE)
         setNickname()
-
-        binding.btnChangeNickname.addClickListener {
-            showDialog()
-        }
-
-
 
     }
 
@@ -67,80 +58,4 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(
         binding.tvNickname.setText("나 ${pref.getString("nickname", "닉네임")}!")
     }
 
-    fun showDialog(){
-        val builder = AlertDialog.Builder(mainActivity)
-        val view = LayoutInflater.from(requireContext()).inflate(
-            R.layout.dlg_change_nickname, mainActivity.findViewById(R.id.nickChangeDlg)
-        )
-        val nickName = view.findViewById<TextInputLayout>(R.id.etNickname)
-        val btnCancel = view.findViewById<TextView>(R.id.tvCancle)
-        val btnSave = view.findViewById<TextView>(R.id.tvSave)
-
-        nickName.editText!!.setOnKeyListener { view, i, keyEvent ->
-            if ((keyEvent.action == KeyEvent.ACTION_DOWN) && (i == KeyEvent.KEYCODE_ENTER)) {
-                hideKeyboard()
-                true
-            }else
-                false
-        }
-
-        builder.setView(view)
-        val dialog = builder.create()
-        dialog.apply {
-            window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-            setCancelable(false)
-        }.show()
-
-        viewModel.updateResult.observe(viewLifecycleOwner){
-            if(it){
-//                dialog.dismiss()
-                mainActivity.showCustomToast("닉네임이 변경됐다!")
-                pref.edit().putString("nickname", changedNickname).apply()
-                setNickname()
-                viewModel.setUpdateResultFalse()
-            }else{
-//                mainActivity.showCustomToast("문제가 생겼군...")
-            }
-        }
-
-
-        viewModel.isDupNick.observe(viewLifecycleOwner){
-            //중복된 아이디?
-            if (it){
-                nickName.isErrorEnabled = true
-                nickName.helperText = ""
-                nickName.error = "중복된 닉네임이란다!"
-            }else{
-                nickName.isErrorEnabled = false
-                nickName.helperText = "사용 가능한 닉네임이란다!"
-            }
-        }
-
-        nickName.editText!!.addTextChangedListener(object :
-            TextWatcher {
-            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
-
-            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                viewModel.isDupNick(p0.toString().trim())
-                changedNickname = p0.toString().trim()
-            }
-
-            override fun afterTextChanged(p0: Editable?) {
-            }
-        })
-
-        btnCancel.setOnClickListener {
-            dialog.dismiss()
-        }
-
-        btnSave.setOnClickListener {
-            if (viewModel.isDupNick.value!!)
-                mainActivity.showCustomToast("중복된 닉네임이다!")
-            else{
-                dialog.dismiss()
-                val user = User(pref.getString("id", "-1")!!, "", nickName.editText!!.text.trim().toString())
-                viewModel.updateNickname(user)
-            }
-        }
-    }
 }

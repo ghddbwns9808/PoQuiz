@@ -1,45 +1,14 @@
 package com.poquiz.data.api
 
-import com.poquiz.data.model.PokeImageResponse
 import com.poquiz.data.model.PokeInfoResponse
-import com.poquiz.data.model.UserResponse
 import com.poquiz.data.model.rank.RankRequest
 import com.poquiz.data.model.rank.RankResponse
-import com.poquiz.domain.model.Rank
-import com.poquiz.domain.model.User
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
-import retrofit2.http.PUT
-import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface ApiInterface {
-    @POST("users/login")
-    suspend fun login(
-        @Body user: UserResponse
-    ): UserResponse
-
-    @GET("users/duplicate/id")
-    suspend fun isDuplicatedId(
-        @Query("id") id: String
-    ): Boolean
-
-    @GET("users/duplicate/nickname")
-    suspend fun isDuplicatedNickname(
-        @Query("nickname") nickname: String
-    ): Boolean
-
-    @POST("users")
-    suspend fun join(
-        @Body user: UserResponse
-    ): UserResponse
-
-    @PUT("users")
-    suspend fun updateNickname(
-        @Body user: UserResponse
-    ): Boolean
-
     @GET("/pokemons")
     suspend fun loadPokemonInfo(
         @Query("id") id: String
