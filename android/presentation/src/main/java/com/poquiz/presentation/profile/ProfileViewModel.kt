@@ -9,7 +9,6 @@ import androidx.lifecycle.viewModelScope
 import com.poquiz.domain.model.User
 import com.poquiz.domain.usecase.profile.NicknameUpdateUseCase
 import com.poquiz.domain.usecase.user.NicknameDuplicatedCheckUseCase
-import com.poquiz.presentation.login.LoginViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import java.lang.Exception
@@ -38,7 +37,6 @@ class ProfileViewModel @Inject constructor(
             try {
                 _isDupNick.value = nicknameDuplicatedCheckUseCase(nickname)!!
             } catch (e: Exception){
-                _toastMsg.value = LoginViewModel.NET_ERR
             }
         }
     }
@@ -48,7 +46,6 @@ class ProfileViewModel @Inject constructor(
             try {
                 _updateResult.value = nicknameUpdateUseCase(user)!!
             } catch (e: Exception){
-                _toastMsg.value = LoginViewModel.NET_ERR
             }
         }
     }

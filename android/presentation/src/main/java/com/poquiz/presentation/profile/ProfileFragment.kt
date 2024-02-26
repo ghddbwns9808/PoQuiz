@@ -11,19 +11,13 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.KeyEvent
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
-import androidx.fragment.app.findFragment
 import androidx.fragment.app.viewModels
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.textfield.TextInputLayout
 import com.poquiz.domain.model.User
-import com.poquiz.presentation.LoginActivity
 import com.poquiz.presentation.MainActivity
 import com.poquiz.presentation.R
 import com.poquiz.presentation.databinding.FragmentProfileBinding
@@ -65,13 +59,7 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(
             showDialog()
         }
 
-        binding.btnLogout.addClickListener {
-            val pref = requireContext().getSharedPreferences("user_info", Context.MODE_PRIVATE)
-            pref.edit().clear().commit()
-            val intent = Intent(mainActivity, LoginActivity::class.java)
-            startActivity(intent)
-            mainActivity.finish()
-        }
+
 
     }
 
