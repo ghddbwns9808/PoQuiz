@@ -8,8 +8,4 @@
         android:icon="@drawable/ic_ranking"
         android:title="랭킹"/>
 
-    <item android:id="@+id/profile"
-        android:icon="@drawable/ic_profile"
-        android:title="프로필"/>
-
 </menu>

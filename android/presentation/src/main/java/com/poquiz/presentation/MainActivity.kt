@@ -1,10 +1,8 @@
 package com.poquiz.presentation
 
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.FragmentManager
 import com.poquiz.presentation.base.Constants
 import com.poquiz.presentation.base.Constants.NAVIGATE_TO_GAME
@@ -14,7 +12,6 @@ import com.poquiz.presentation.databinding.ActivityMainBinding
 import com.poquiz.presentation.game.GameFragment
 import com.poquiz.presentation.game.GameOverFragment
 import com.poquiz.presentation.game.GameStartFragment
-import com.poquiz.presentation.profile.ProfileFragment
 import com.poquiz.presentation.ranking.RankingFragment
 import com.ssafy.template.board.config.BaseActivity
 import dagger.hilt.android.AndroidEntryPoint
@@ -51,11 +48,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
                 R.id.ranking -> {
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.frag_main, RankingFragment())
-                        .commitAllowingStateLoss()
-                }
-                R.id.profile -> {
-                    supportFragmentManager.beginTransaction()
-                        .replace(R.id.frag_main, ProfileFragment())
                         .commitAllowingStateLoss()
                 }
             }
