@@ -15,8 +15,8 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-        val pref = getSharedPreferences("user_info", Context.MODE_PRIVATE)
-        val isAutoLogin = pref.getBoolean("autoLogin", false)
+//        val pref = getSharedPreferences("user_info", Context.MODE_PRIVATE)
+//        val isAutoLogin = pref.getBoolean("autoLogin", false)
 
         val iv = findViewById<ImageView>(R.id.ivSplash)
         Glide
@@ -25,9 +25,9 @@ class SplashActivity : AppCompatActivity() {
             .into(iv)
         Handler().postDelayed({
 
-            var intent = Intent(this, LoginActivity::class.java)
-            if (isAutoLogin)
-                intent = Intent(this, MainActivity::class.java)
+//            var intent = Intent(this, LoginActivity::class.java)
+//            if (isAutoLogin)
+            val intent = Intent(this, MainActivity::class.java)
 
             startActivity(intent)
             finish()
