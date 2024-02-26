@@ -23,6 +23,7 @@ import com.poquiz.presentation.databinding.FragmentLoginBinding
 import com.ssafy.template.board.config.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
+private const val TAG = "LoginFragment_hong"
 
 @AndroidEntryPoint
 class LoginFragment : BaseFragment<FragmentLoginBinding>(
@@ -62,7 +63,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(
 
             if (id.isBlank() || pw.isBlank()){
                 loginActivity.showCustomToast("아이디 비밀번호를 모두 입력하세요")
-                binding.inputLayout.startAnimation(vibration)
+                binding.llInput.startAnimation(vibration)
             }else{
                 viewModel.login(User(id, pw, ""))
             }

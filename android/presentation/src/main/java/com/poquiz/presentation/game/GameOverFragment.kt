@@ -22,6 +22,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
+private const val TAG = "GameOverFragment_hong"
 
 @AndroidEntryPoint
 class GameOverFragment : BaseFragment<FragmentGameOverBinding>(

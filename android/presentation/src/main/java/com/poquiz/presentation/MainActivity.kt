@@ -19,6 +19,7 @@ import com.poquiz.presentation.ranking.RankingFragment
 import com.ssafy.template.board.config.BaseActivity
 import dagger.hilt.android.AndroidEntryPoint
 
+private const val TAG = "MainActivity_hong"
 @AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding>(
     ActivityMainBinding::inflate

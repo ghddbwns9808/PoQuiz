@@ -26,6 +26,7 @@ import com.ssafy.template.board.config.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.Random
 
+private const val TAG = "GameFragment_hong"
 @AndroidEntryPoint
 class GameFragment : BaseFragment<FragmentGameBinding>(
     FragmentGameBinding::bind, R.layout.fragment_game

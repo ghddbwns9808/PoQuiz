@@ -16,7 +16,7 @@ import kotlinx.coroutines.launch
 import java.lang.Exception
 import javax.inject.Inject
 
-
+private const val TAG = "GameViewModel_hong"
 @HiltViewModel
 class GameViewModel @Inject constructor(
     private val pokemonImgUseCase: PokemonImgUseCase,

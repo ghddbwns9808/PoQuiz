@@ -15,6 +15,7 @@ import java.lang.Exception
 import java.util.regex.Pattern
 import javax.inject.Inject
 
+private const val TAG = "JoinViewModel_hong"
 
 @HiltViewModel
 class JoinViewModel @Inject constructor(
