@@ -7,7 +7,7 @@ import javax.inject.Inject
 class RegistNormalRankUseCase @Inject constructor(
     private val rankRepository: RankRepository
 ) {
-    suspend operator fun invoke(rank: Rank): Boolean{
-        return rankRepository.registerMidRank(rank)
+    suspend operator fun invoke(rank: Rank){
+        return rankRepository.insertNormalRank(rank)
     }
 }

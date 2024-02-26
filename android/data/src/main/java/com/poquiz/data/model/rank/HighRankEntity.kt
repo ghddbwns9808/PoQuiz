@@ -4,7 +4,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "row_rank")
+@Entity(tableName = "high_rank")
 data class HighRankEntity(
     @ColumnInfo(name = "nickname")
     val nickname: String,

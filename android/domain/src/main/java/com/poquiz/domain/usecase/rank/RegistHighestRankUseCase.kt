@@ -7,7 +7,7 @@ import javax.inject.Inject
 class RegistHighestRankUseCase @Inject constructor(
     private val rankRepository: RankRepository
 ) {
-    suspend operator fun invoke(rank: Rank): Boolean{
-        return rankRepository.registerHighestRank(rank)
+    suspend operator fun invoke(rank: Rank){
+        return rankRepository.insertMasterRank(rank)
     }
 }

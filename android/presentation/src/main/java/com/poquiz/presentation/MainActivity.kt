@@ -26,10 +26,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
         super.onCreate(savedInstanceState)
 
         initBottomNavigation()
-
-        val pref = getSharedPreferences("user_info", Context.MODE_PRIVATE)
-        showCustomToast("환영한다 ${pref.getString("nickname", "닉네임")}!")
-
     }
 
     private fun initBottomNavigation() {

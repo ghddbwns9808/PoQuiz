@@ -78,16 +78,16 @@ class GameOverFragment : BaseFragment<FragmentGameOverBinding>(
 
         when(difficulty){
             1 -> {
-                viewModel.updateLowRank(Rank(id!!, nickname!!, correct))
+                viewModel.updateLowRank(Rank(nickname!!, correct.toString(), System.currentTimeMillis()))
             }
             2 -> {
-                viewModel.updateNormalRank(Rank(id!!, nickname!!, correct))
+                viewModel.updateNormalRank(Rank(nickname!!, correct.toString(), System.currentTimeMillis()))
             }
             3 -> {
-                viewModel.updateHighRank(Rank(id!!, nickname!!, correct))
+                viewModel.updateHighRank(Rank(nickname!!, correct.toString(), System.currentTimeMillis()))
             }
             4 -> {
-                viewModel.updateHighestRank(Rank(id!!, nickname!!, correct))
+                viewModel.updateHighestRank(Rank(nickname!!, correct.toString(), System.currentTimeMillis()))
             }
         }
     }

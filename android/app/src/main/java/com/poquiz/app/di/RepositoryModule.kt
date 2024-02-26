@@ -4,8 +4,8 @@ import com.poquiz.data.repository.game.GameRepositoryImpl
 import com.poquiz.data.repository.game.remote.GameRemoteDataSource
 import com.poquiz.data.repository.game.remote.GameRemoteDataSourceImpl
 import com.poquiz.data.repository.rank.RankRepositoryImpl
-import com.poquiz.data.repository.rank.remote.RankRemoteDataSource
-import com.poquiz.data.repository.rank.remote.RankRemoteDataSourceImpl
+import com.poquiz.data.repository.rank.local.RankLocalDataSource
+import com.poquiz.data.repository.rank.local.RankLocalDataSourceImpl
 import com.poquiz.domain.repository.GameRepository
 import com.poquiz.domain.repository.RankRepository
 import dagger.Binds
@@ -33,6 +33,6 @@ abstract class RepositoryModule {
 
     @Singleton
     @Binds
-    abstract fun bindRankRemoteDataSource(rankRemoteDataSourceImpl: RankRemoteDataSourceImpl): RankRemoteDataSource
+    abstract fun bindRankLocalDataSource(rankLocalDataSourceImpl: RankLocalDataSourceImpl): RankLocalDataSource
 
 }

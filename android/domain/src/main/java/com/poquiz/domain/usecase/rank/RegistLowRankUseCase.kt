@@ -7,7 +7,7 @@ import javax.inject.Inject
 class RegistLowRankUseCase @Inject constructor(
     private val rankRepository: RankRepository
 ){
-    suspend operator fun invoke(rank: Rank): Boolean{
-        return rankRepository.registerLowRank(rank)
+    suspend operator fun invoke(rank: Rank){
+        return rankRepository.insertLowRank(rank)
     }
 }

@@ -8,6 +8,6 @@ class GetHighestRankUseCase @Inject constructor(
     private val rankRepository: RankRepository
 ) {
     suspend operator fun invoke(): List<Rank>{
-        return rankRepository.getHighestRank()
+        return rankRepository.getMasterRank()
     }
 }

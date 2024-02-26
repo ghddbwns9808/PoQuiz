@@ -1,43 +1,44 @@
 package com.poquiz.data.repository.rank
 
+import com.poquiz.data.repository.rank.local.RankLocalDataSource
 import com.poquiz.data.repository.rank.remote.RankRemoteDataSource
 import com.poquiz.domain.model.Rank
 import com.poquiz.domain.repository.RankRepository
 import javax.inject.Inject
 
 class RankRepositoryImpl @Inject constructor(
-    private val rankRemoteDataSource: RankRemoteDataSource
+    private val rankLocalDataSource: RankLocalDataSource
 ) : RankRepository{
-    override suspend fun registerLowRank(rank: Rank): Boolean {
-        return rankRemoteDataSource.registerLowRank(rank)
+    override suspend fun insertLowRank(rank: Rank) {
+        rankLocalDataSource.insertHighRank(rank)
     }
 
-    override suspend fun registerMidRank(rank: Rank): Boolean {
-        return rankRemoteDataSource.registerNormalRank(rank)
+    override suspend fun insertNormalRank(rank: Rank) {
+        rankLocalDataSource.insertNormalRank(rank)
     }
 
-    override suspend fun registerHighRank(rank: Rank): Boolean {
-        return rankRemoteDataSource.registerHighRank(rank)
+    override suspend fun insertHighRank(rank: Rank) {
+        rankLocalDataSource.insertHighRank(rank)
     }
 
-    override suspend fun registerHighestRank(rank: Rank): Boolean {
-        return rankRemoteDataSource.registerHighestRank(rank)
+    override suspend fun insertMasterRank(rank: Rank) {
+        rankLocalDataSource.insertMasterRank(rank)
     }
 
     override suspend fun getLowRank(): List<Rank> {
-        return fillTenRank(rankRemoteDataSource.getLowRank())
+        return fillTenRank(rankLocalDataSource.getLowRank())
     }
 
     override suspend fun getNormalRank(): List<Rank> {
-        return fillTenRank(rankRemoteDataSource.getNormalRank())
+        return fillTenRank(rankLocalDataSource.getNormalRank())
     }
 
     override suspend fun getHighRank(): List<Rank> {
-        return fillTenRank(rankRemoteDataSource.getHighRank())
+        return fillTenRank(rankLocalDataSource.getHighRank())
     }
 
-    override suspend fun getHighestRank(): List<Rank> {
-        return fillTenRank(rankRemoteDataSource.getHighestRank())
+    override suspend fun getMasterRank(): List<Rank> {
+        return fillTenRank(rankLocalDataSource.getMasterRank())
     }
 
     private fun fillTenRank(result: List<Rank>): List<Rank>{
@@ -47,7 +48,7 @@ class RankRepositoryImpl @Inject constructor(
                 Rank("", "_ _ _", 0)
             )
         }
-        return res as List<Rank>
+        return res
     }
 
 }
