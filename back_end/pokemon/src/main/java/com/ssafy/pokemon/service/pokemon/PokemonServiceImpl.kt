@@ -1,18 +1,16 @@
-package com.ssafy.pokemon.service.pokemon;
+package com.ssafy.pokemon.service.pokemon
 
-import com.ssafy.pokemon.dto.Pokemon;
-import com.ssafy.pokemon.mapper.PokemonMapper;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import com.ssafy.pokemon.dto.Pokemon
+import com.ssafy.pokemon.mapper.PokemonMapper
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.stereotype.Service
 
 @Service
-public class PokemonServiceImpl implements PokemonService{
-
+class PokemonServiceImpl : PokemonService {
     @Autowired
-    private PokemonMapper pm;
+    private lateinit var pm: PokemonMapper
 
-    @Override
-    public Pokemon getPokemon(String num) {
-        return pm.selectPokemon(num);
+    override fun getPokemon(num: String): Pokemon {
+        return pm.selectPokemon(num)
     }
 }
