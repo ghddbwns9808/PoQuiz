@@ -27,7 +27,7 @@ private const val TAG = "GameOverFragment_hong"
 @AndroidEntryPoint
 class GameOverFragment : BaseFragment<FragmentGameOverBinding>(
     FragmentGameOverBinding::bind, R.layout.fragment_game_over
-) {
+), RegisterRankDialogClickInterface {
     private val viewModel: GameOverViewModel by viewModels()
     private var difficulty: Int = -1
     private var correct: Int = -1
@@ -48,7 +48,7 @@ class GameOverFragment : BaseFragment<FragmentGameOverBinding>(
         mainActivity.findViewById<BottomNavigationView>(R.id.btmNav).visibility = View.GONE
 
         registerObserver()
-        registerRanking()
+        showDialog()
 
         Glide
             .with(this)
@@ -69,25 +69,25 @@ class GameOverFragment : BaseFragment<FragmentGameOverBinding>(
         }
     }
 
-    private fun registerRanking(){
-        val pref = requireContext().getSharedPreferences("user_info", Context.MODE_PRIVATE)
-        val id = pref.getString("id", "-1")
-        val nickname = pref.getString("nickname", "-1")
+    private fun showDialog(){
+        val dialog = RegisterRankDialog(this)
+        dialog.isCancelable = false
+        dialog.show(this.childFragmentManager, "")
+    }
 
-        Log.d(TAG, "registerRanking: ${id}, correct: ${correct}")
-
+    override fun onRegisterButtonClick(nickName: String) {
         when(difficulty){
             1 -> {
-                viewModel.updateLowRank(Rank(nickname!!, correct.toString(), System.currentTimeMillis()))
+                viewModel.updateLowRank(Rank(nickName, correct.toString(), System.currentTimeMillis()))
             }
             2 -> {
-                viewModel.updateNormalRank(Rank(nickname!!, correct.toString(), System.currentTimeMillis()))
+                viewModel.updateNormalRank(Rank(nickName, correct.toString(), System.currentTimeMillis()))
             }
             3 -> {
-                viewModel.updateHighRank(Rank(nickname!!, correct.toString(), System.currentTimeMillis()))
+                viewModel.updateHighRank(Rank(nickName, correct.toString(), System.currentTimeMillis()))
             }
             4 -> {
-                viewModel.updateHighestRank(Rank(nickname!!, correct.toString(), System.currentTimeMillis()))
+                viewModel.updateHighestRank(Rank(nickName, correct.toString(), System.currentTimeMillis()))
             }
         }
     }
@@ -102,4 +102,5 @@ class GameOverFragment : BaseFragment<FragmentGameOverBinding>(
                 }
             }
     }
+
 }

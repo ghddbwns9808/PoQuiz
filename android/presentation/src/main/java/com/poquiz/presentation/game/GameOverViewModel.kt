@@ -30,7 +30,7 @@ class GameOverViewModel @Inject constructor(
         viewModelScope.launch {
             try {
                 val response = registLowRankUseCase(rank)
-                if (response)
+                if (response > 0)
                     _rankUpdateResult.value = Constants.RANK_UPDATE_SUCCESS
                 else
                     _rankUpdateResult.value = Constants.RANK_UPDATE_FAIL
@@ -44,7 +44,7 @@ class GameOverViewModel @Inject constructor(
         viewModelScope.launch {
             try {
                 val response = registNormalRankUseCase(rank)
-                if (response)
+                if (response > 0)
                     _rankUpdateResult.value = Constants.RANK_UPDATE_SUCCESS
                 else
                     _rankUpdateResult.value = Constants.RANK_UPDATE_FAIL
@@ -58,7 +58,7 @@ class GameOverViewModel @Inject constructor(
         viewModelScope.launch {
             try {
                 val response = registHighRankUseCase(rank)
-                if (response)
+                if (response> 0)
                     _rankUpdateResult.value = Constants.RANK_UPDATE_SUCCESS
                 else
                     _rankUpdateResult.value = Constants.RANK_UPDATE_FAIL
@@ -72,7 +72,7 @@ class GameOverViewModel @Inject constructor(
         viewModelScope.launch {
             try {
                 val response = registHighestRankUseCase(rank)
-                if (response)
+                if (response > 0)
                     _rankUpdateResult.value = Constants.RANK_UPDATE_SUCCESS
                 else
                     _rankUpdateResult.value = Constants.RANK_UPDATE_FAIL

@@ -3,13 +3,13 @@ package com.poquiz.domain.repository
 import com.poquiz.domain.model.Rank
 
 interface RankRepository {
-    suspend fun insertLowRank(rank: Rank)
+    suspend fun insertLowRank(rank: Rank): Long
 
-    suspend fun insertNormalRank(rank: Rank)
+    suspend fun insertNormalRank(rank: Rank): Long
 
-    suspend fun insertHighRank(rank: Rank)
+    suspend fun insertHighRank(rank: Rank): Long
 
-    suspend fun insertMasterRank(rank: Rank)
+    suspend fun insertMasterRank(rank: Rank): Long
 
     suspend fun getLowRank(): List<Rank>
     suspend fun getNormalRank(): List<Rank>

@@ -12,20 +12,20 @@ import javax.inject.Inject
 class RankLocalDataSourceImpl @Inject constructor(
     private val rankDao: RankDao
 ): RankLocalDataSource {
-    override suspend fun insertLowRank(rank: Rank) {
-        rankDao.insertLowRank(rank.toLowRankEntity())
+    override suspend fun insertLowRank(rank: Rank): Long {
+        return rankDao.insertLowRank(rank.toLowRankEntity())
     }
 
-    override suspend fun insertNormalRank(rank: Rank) {
-        rankDao.insertNormalRank(rank.toNormalRankEntity())
+    override suspend fun insertNormalRank(rank: Rank): Long {
+        return rankDao.insertNormalRank(rank.toNormalRankEntity())
     }
 
-    override suspend fun insertHighRank(rank: Rank) {
-        rankDao.insertHighRank(rank.toHighRankEntity())
+    override suspend fun insertHighRank(rank: Rank): Long {
+        return rankDao.insertHighRank(rank.toHighRankEntity())
     }
 
-    override suspend fun insertMasterRank(rank: Rank) {
-        rankDao.insertMasterRank(rank.toMasterRankEntity())
+    override suspend fun insertMasterRank(rank: Rank) : Long{
+        return rankDao.insertMasterRank(rank.toMasterRankEntity())
     }
 
     override suspend fun getLowRank(): List<Rank> {

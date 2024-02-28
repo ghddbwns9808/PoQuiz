@@ -1,7 +1,6 @@
 package com.poquiz.data.repository.rank
 
 import com.poquiz.data.repository.rank.local.RankLocalDataSource
-import com.poquiz.data.repository.rank.remote.RankRemoteDataSource
 import com.poquiz.domain.model.Rank
 import com.poquiz.domain.repository.RankRepository
 import javax.inject.Inject
@@ -9,20 +8,20 @@ import javax.inject.Inject
 class RankRepositoryImpl @Inject constructor(
     private val rankLocalDataSource: RankLocalDataSource
 ) : RankRepository{
-    override suspend fun insertLowRank(rank: Rank) {
-        rankLocalDataSource.insertHighRank(rank)
+    override suspend fun insertLowRank(rank: Rank): Long {
+        return rankLocalDataSource.insertHighRank(rank)
     }
 
-    override suspend fun insertNormalRank(rank: Rank) {
-        rankLocalDataSource.insertNormalRank(rank)
+    override suspend fun insertNormalRank(rank: Rank): Long {
+        return rankLocalDataSource.insertNormalRank(rank)
     }
 
-    override suspend fun insertHighRank(rank: Rank) {
-        rankLocalDataSource.insertHighRank(rank)
+    override suspend fun insertHighRank(rank: Rank): Long {
+        return rankLocalDataSource.insertHighRank(rank)
     }
 
-    override suspend fun insertMasterRank(rank: Rank) {
-        rankLocalDataSource.insertMasterRank(rank)
+    override suspend fun insertMasterRank(rank: Rank) : Long{
+        return rankLocalDataSource.insertMasterRank(rank)
     }
 
     override suspend fun getLowRank(): List<Rank> {

@@ -13,22 +13,22 @@ interface RankDao {
     @Insert
     suspend fun insertLowRank(
         lowRankEntity: LowRankEntity
-    )
+    ): Long
 
     @Insert
     suspend fun insertNormalRank(
         normalRankEntity: NormalRankEntity
-    )
+    ): Long
 
     @Insert
     suspend fun insertHighRank(
         highRankEntity: HighRankEntity
-    )
+    ): Long
 
     @Insert
     suspend fun insertMasterRank(
         masterRankEntity: MasterRankEntity
-    )
+    ): Long
 
     @Query("SELECT * FROM low_rank ORDER BY score DESC LIMIT 10")
     suspend fun getLowRank(): List<LowRankEntity>
