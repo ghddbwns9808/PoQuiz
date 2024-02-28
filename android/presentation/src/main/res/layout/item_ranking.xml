@@ -12,8 +12,7 @@
         <TextView
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/tvRank"
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            android:layout_width="wrap_content"
             android:layout_height="100dp"
             android:text="1등"
             android:textAppearance="@style/Text"
@@ -21,14 +20,15 @@
             android:textSize="30sp"
             android:gravity="center"
             android:textColor="@color/white"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:paddingStart="10dp"/>
 
         <TextView xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/tvNickname"
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_weight="4"
-            android:text="수진짱"
+            android:text="닉네임"
             android:textAppearance="@style/Text"
             android:textSize="30sp"
             android:background="@color/rank_bg"
@@ -39,9 +39,8 @@
 
         <TextView xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/tvScore"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="100dp"
-            android:layout_weight="1"
             android:text="1점"
             android:background="@color/rank_bg"
             android:textAppearance="@style/Text"
@@ -49,7 +48,8 @@
             android:textColor="@color/white"
             android:gravity="center"
             android:layout_gravity="center_vertical|center_horizontal"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:paddingEnd="10dp"/>
     </androidx.appcompat.widget.LinearLayoutCompat>
 
 </FrameLayout>

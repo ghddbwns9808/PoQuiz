@@ -9,7 +9,7 @@ class RankRepositoryImpl @Inject constructor(
     private val rankLocalDataSource: RankLocalDataSource
 ) : RankRepository{
     override suspend fun insertLowRank(rank: Rank): Long {
-        return rankLocalDataSource.insertHighRank(rank)
+        return rankLocalDataSource.insertLowRank(rank)
     }
 
     override suspend fun insertNormalRank(rank: Rank): Long {

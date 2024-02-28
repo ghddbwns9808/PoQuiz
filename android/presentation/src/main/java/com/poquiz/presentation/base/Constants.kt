@@ -10,6 +10,6 @@ object Constants {
     const val NAVIGATE_TO_JOIN = 104
 
     const val NET_ERR = "네트워크에 문제가 있구나!"
-    const val RANK_UPDATE_SUCCESS = "신기록이구나!"
-    const val RANK_UPDATE_FAIL = "아쉽구나!"
+    const val RANK_UPDATE_SUCCESS = "랭킹을 등록했다!"
+    const val RANK_UPDATE_FAIL = "문제가 생겼군...!"
 }

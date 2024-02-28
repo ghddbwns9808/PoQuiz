@@ -1,5 +1,6 @@
 package com.poquiz.presentation.game
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -14,6 +15,8 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import java.lang.Exception
 import javax.inject.Inject
+
+private const val TAG = "GameOverViewModel_hong"
 
 @HiltViewModel
 class GameOverViewModel @Inject constructor(
@@ -30,6 +33,7 @@ class GameOverViewModel @Inject constructor(
         viewModelScope.launch {
             try {
                 val response = registLowRankUseCase(rank)
+                Log.d(TAG, "updateLowRank: $response")
                 if (response > 0)
                     _rankUpdateResult.value = Constants.RANK_UPDATE_SUCCESS
                 else

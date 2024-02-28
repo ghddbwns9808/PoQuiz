@@ -45,7 +45,8 @@
     <string name="ranking_very_hard">개고수 랭킹</string>
 
     <string name="profile_poke_master">포켓몬 마스터가 될거야!</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="rank_insert_success">랭킹이 등록되었다...!</string>
+    <string name="rank_insert_fail">등록에 문제가 생겼군...</string>
 
 </resources>
