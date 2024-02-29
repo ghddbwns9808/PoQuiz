@@ -16,7 +16,7 @@
     <string name="difficulty_easy">하수</string>
     <string name="difficulty_mid">중수</string>
     <string name="difficulty_hard">고수</string>
-    <string name="difficulty_very_hard">개고수</string>
+    <string name="difficulty_very_hard">마스터</string>
 
     <string name="join_id_available">사용 가능한 아이디입니다</string>
     <string name="join_id_non_available">중복된 아이디입니다</string>
@@ -42,7 +42,7 @@
     <string name="ranking_easy">하수 랭킹</string>
     <string name="ranking_mid">중수 랭킹</string>
     <string name="ranking_hard">고수 랭킹</string>
-    <string name="ranking_very_hard">개고수 랭킹</string>
+    <string name="ranking_very_hard">마스터 랭킹</string>
 
     <string name="profile_poke_master">포켓몬 마스터가 될거야!</string>
 

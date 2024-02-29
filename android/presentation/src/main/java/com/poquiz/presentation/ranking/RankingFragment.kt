@@ -93,7 +93,7 @@ class RankingFragment : BaseFragment<FragmentRankingBinding>(
                     CardDataImpl(
                         "",
                         R.drawable.bg4,
-                        R.drawable.ranking_very_hard,
+                        R.drawable.ranking_master,
                         viewModel.highestRank.value
                     )
                 )
